@@ -2,13 +2,20 @@
 
 /* Reset default margin, apply modern font, and set overall background and color theme */
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   margin: 0;
+  padding: 0 1rem;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #1e2a3a, #2c3e50); /* Deep twilight gradient */
+  background-color: #0d1b2a;
   overflow-x: hidden;
   position: relative;
-  color: #f0f0f0; /* Light text for dark background */
+  color: #f0f0f0;
 }
+
 
 /* Aurora effect using multiple radial gradients with soft animation */
 body::before {
@@ -36,16 +43,17 @@ body::before {
 
 /* Main container for the app content */
 .app-container {
-  backdrop-filter: blur(20px); /* Frosted glass effect */
-  background: rgba(255, 255, 255, 0.05); /* Transparent white */
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 20px;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
   padding: 2rem;
   width: 100%;
   max-width: 600px;
-  margin: 3rem auto;
-  animation: fadeIn 1.2s ease-out; /* Smooth entrance */
+  margin: 2rem auto;
+  animation: fadeIn 1.2s ease-out;
 }
+
 
 /* Heading style */
 h1 {
