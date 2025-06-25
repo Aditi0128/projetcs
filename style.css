@@ -1,16 +1,16 @@
 /* style.css */
 
-/* Frosted aurora background for the whole app */
+/* Reset default margin, apply modern font, and set overall background and color theme */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #0f1c2e; /* fallback if animation doesn't load */
+  background: linear-gradient(to bottom, #1e2a3a, #2c3e50); /* Deep twilight gradient */
   overflow-x: hidden;
   position: relative;
-  color: #f0f0f0;
+  color: #f0f0f0; /* Light text for dark background */
 }
 
-/* Aurora lights effect */
+/* Aurora effect using multiple radial gradients with soft animation */
 body::before {
   content: "";
   position: fixed;
@@ -18,25 +18,20 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background:
-    radial-gradient(ellipse at 20% 20%, rgba(58, 123, 213, 0.25), transparent 70%),
-    radial-gradient(ellipse at 80% 80%, rgba(134, 185, 255, 0.25), transparent 70%),
-    radial-gradient(ellipse at center, rgba(104, 208, 232, 0.1), transparent 70%);
-  z-index: -1;
-  animation: auroraMove 22s ease-in-out infinite;
-  pointer-events: none;
+  background: 
+    radial-gradient(ellipse at top left, rgba(58, 123, 213, 0.4), transparent 70%),
+    radial-gradient(ellipse at bottom right, rgba(134, 185, 255, 0.3), transparent 70%),
+    radial-gradient(ellipse at center, rgba(104, 208, 232, 0.15), transparent 70%);
+  pointer-events: none; /* Allows interaction with page content */
+  z-index: -1; /* Stay in background */
+  animation: aurora 20s ease-in-out infinite; /* Smooth movement */
 }
 
-@keyframes auroraMove {
-  0% {
-    background-position: 0% 0%, 100% 100%, 50% 50%;
-  }
-  50% {
-    background-position: 100% 0%, 0% 100%, 60% 40%;
-  }
-  100% {
-    background-position: 0% 0%, 100% 100%, 50% 50%;
-  }
+/* Aurora animation for subtle shifting */
+@keyframes aurora {
+  0% { background-position: 0 0, 100% 100%, 50% 50%; }
+  50% { background-position: 100% 0, 0 100%, 60% 40%; }
+  100% { background-position: 0 0, 100% 100%, 50% 50%; }
 }
 
 /* Main container for the app content */
