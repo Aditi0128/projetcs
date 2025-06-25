@@ -22,7 +22,7 @@ body::before {
     radial-gradient(ellipse at 20% 20%, rgba(58, 123, 213, 0.25), transparent 70%),
     radial-gradient(ellipse at 80% 80%, rgba(134, 185, 255, 0.25), transparent 70%),
     radial-gradient(ellipse at center, rgba(104, 208, 232, 0.1), transparent 70%);
-  z-index: 1;
+  z-index: 10;
   animation: auroraMove 22s ease-in-out infinite;
   pointer-events: none;
 }
